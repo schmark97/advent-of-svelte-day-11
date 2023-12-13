@@ -44,47 +44,49 @@
 	};
 </script>
 
-<Section name="crudcreateform">
-	<form on:submit|preventDefault={getName}>
-		<div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
-			<div class="sm:col-span-2">
-				<Label
-					for="name"
-					class="mb-2 
+<div class="bg-gray-800 min-h-screen flex justify-center items-center">
+	<Section name="crudcreateform">
+		<form on:submit|preventDefault={getName}>
+			<div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+				<div class="sm:col-span-2">
+					<Label
+						for="name"
+						class="mb-2 
 				{form?.error ? 'text-red-500' : 'text-white'}">Your Name</Label
-				>
-				<Input
-					type="text"
-					name="name"
-					id="name"
-					class="{form?.error
-						? 'bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500 dark:bg-gray-700 focus:border-red-500 block w-full p-2.5 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500'
-						: 'text-white'}}"
-					placeholder="Type your name"
-					bind:value={name}
-					required
-				/>
-				{#if form?.error}
-					<Helper class="mt-2">
-						<span class="font-medium text-red-500">{form?.message}</span>
-					</Helper>
-				{/if}
+					>
+					<Input
+						type="text"
+						name="name"
+						id="name"
+						class="{form?.error
+							? 'bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500 dark:bg-gray-700 focus:border-red-500 block w-full p-2.5 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500'
+							: 'text-white'}}"
+						placeholder="Type your name"
+						bind:value={name}
+						required
+					/>
+					{#if form?.error}
+						<Helper class="mt-2">
+							<span class="font-medium text-red-500">{form?.message}</span>
+						</Helper>
+					{/if}
+				</div>
+				<Button type="submit" class="w-32 pri">Submit</Button>
 			</div>
-			<Button type="submit" class="w-32 pri">Submit</Button>
-		</div>
-	</form>
-</Section>
+		</form>
+	</Section>
 
-<Modal
-	background={'bg-red-700'}
-	title="Your Elf Name Is:"
-	bind:open={defaultModal}
-	class="bg-red-700"
-	autoclose
-	outsideclose
-	placement="top-center"
->
-	<p class="text-white text-xl font-bold">
-		{generatedName}
-	</p>
-</Modal>
+	<Modal
+		background={'bg-red-700'}
+		title="Your Elf Name Is:"
+		bind:open={defaultModal}
+		class="bg-red-700"
+		autoclose
+		outsideclose
+		placement="top-center"
+	>
+		<p class="text-white text-xl font-bold">
+			{generatedName}
+		</p>
+	</Modal>
+</div>

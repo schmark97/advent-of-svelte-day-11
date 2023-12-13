@@ -19,7 +19,10 @@ const config = {
 				gray: { 700: '#374151', 800: '#1F2A37', 900: '#111928' },
 				white: '#ffffff',
 			}
-		}
+		},
+		fontFamily: {
+			display: ["Mountains of Christmas"],
+		},
 	}
 };
 
