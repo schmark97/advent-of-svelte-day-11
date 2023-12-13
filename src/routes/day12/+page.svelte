@@ -80,7 +80,7 @@
 					data-y="0"
 					contenteditable="true"
 					role="button"
-					tabindex="1"
+					tabindex="0"
 					on:dblclick={() => {
 						cardTexts = cardTexts.filter((item) => item !== ct);
 					}}
